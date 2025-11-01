@@ -22,5 +22,13 @@ frec_corte = 10;
 orden = 4;
 mar_filt = FiltrarStruct(mar, fm, frec_corte, orden);
 
-%% Centros Articulares
-CA = ObtenerCA_MS(mar_filt, ant, true);
+%% Sistemas coordenados locales
+SCL = ObtenerSCL_MS(mar, ant);
+
+% Graficar
+Graficar_SCL_MS(SCL)
+
+%% Excursión angular
+angulos = ObtenerAngulos_MS(SCL);
+
+Graficar_Angulos_MS(angulos)

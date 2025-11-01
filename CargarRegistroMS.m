@@ -7,7 +7,7 @@ function [Datos,fileName] = CargarRegistroMS()
 % "Datos" - estructura con datos de marcadores para miembro superior
 % "fileName" - nombre del archivo cargado
 
-[DatosMarcadores, infoCinematica, Eventos, fileName] = leer_c3d_MS();
+[DatosMarcadores, infoCinematica, Eventos, fileName] = Leer_c3d_MS();
 
 % Asignación de datos a la estructura
 Datos.Registro.Marcadores.Crudos = DatosMarcadores;  % Datos de marcadores reflectivos

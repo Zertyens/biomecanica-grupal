@@ -55,15 +55,15 @@ GH_aux = normalize((mar.C7 - mar.L_AC), 2, 'norm');
 GH_y_aux = normalize(cross(GH_aux, GH_x_aux, 2), 2, 'norm');
 
 % Distancia entre acromiones
-if isempty(ant.DistanciaAcromiones.Valor) || ant.DistanciaAcromiones.Calculado
+if isempty(ant.DistanciaAcromiones.Valor)
     dist_acromiones = sqrt(sum((mar.R_AC - mar.L_AC).^2, 2));
 else
     dist_acromiones = ant.DistanciaAcromiones.Valor;
 end
 
 % GH (ecuación 8)
-SCL.GH_R = mar.R_AC - 0.17 * dist_acromiones .* GH_y_aux;
-SCL.GH_L = mar.L_AC - 0.17 * dist_acromiones .* GH_y_aux;
+SCL.GH_R = - 0.17 * dist_acromiones .* GH_y_aux + mar.R_AC;
+SCL.GH_L = - 0.17 * dist_acromiones .* GH_y_aux + mar.L_AC;
 
 %% ========================================================================
 %% CODO - Ecuación 9
@@ -107,7 +107,7 @@ SCL.Humero_L.u = normalize(cross(SCL.Humero_L.v, SCL.Humero_L.w, 2), 2, 'norm');
 SCL.Antebrazo_R.Origen = mar.R_US;
 
 % Y_A: de US a Codo (proximal) - Ecuación 13
-SCL.Antebrazo_R.v = normalize((SCL.Codo_R - mar.R_US), 2, 'norm');
+SCL.Antebrazo_R.v = Y_A_R;
 
 % X_A: perpendicular al plano (US, RS, Codo), adelante - Ecuación 14
 SCL.Antebrazo_R.u = normalize(cross(SCL.Antebrazo_R.v, ...
@@ -120,7 +120,7 @@ SCL.Antebrazo_R.w = normalize(cross(SCL.Antebrazo_R.u, ...
 % IZQUIERDO
 SCL.Antebrazo_L.Origen = mar.L_US;
 
-SCL.Antebrazo_L.v = normalize((SCL.Codo_L - mar.L_US), 2, 'norm');
+SCL.Antebrazo_L.v = Y_A_L;
 
 % Ecuación 15 (orden invertido para izquierdo)
 SCL.Antebrazo_L.u = normalize(cross((mar.L_RS - mar.L_US), ...

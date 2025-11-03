@@ -27,6 +27,7 @@ SCL = ObtenerSCL_MS(mar, ant);
 
 % Graficar
 Graficar_SCL_MS(SCL)
+Graficar_SCL_MS_Juntos(SCL, 5, 0.08)
 
 %% Excursión angular
 angulos = ObtenerAngulos_MS(SCL);

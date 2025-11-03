@@ -17,7 +17,6 @@ Antropometria.Sexo = 'M';  % 'M' o 'F'
 %% Medidas específicas para miembro superior
 % Distancia entre acromiones (ancho de hombros)
 Antropometria.DistanciaAcromiones.Valor = 0.42;  % m
-Antropometria.DistanciaAcromiones.Calculado = false;
 Antropometria.DistanciaAcromiones.Unidad = 'm';
 
 % Longitud del húmero (acromion a epicóndilo lateral)
@@ -43,7 +42,6 @@ Antropometria.LongitudManoL.Unidad = 'm';
 
 % Ancho de la pelvis (distancia entre ASIS)
 Antropometria.AnchoPelvis.Valor = 0.31;  % m
-Antropometria.AnchoPelvis.Calculado = false;
 Antropometria.AnchoPelvis.Unidad = 'm';
 
 fprintf('Estructura de antropometría creada. \n');

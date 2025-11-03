@@ -52,7 +52,7 @@ plot(linspace(0, 100, length(Angulos.Codo_L.alfa)), Angulos.Codo_L.alfa, 'r', 'L
 hold off;
 title('Codo - Flex/Ext', 'FontSize', 12, 'FontWeight', 'bold');
 xlabel('% Movimiento');
-ylabel('Flex(+)/Ext(-) [°]');
+ylabel('Flex(+)/HiperExt(-) [°]');
 grid on;
 xlim([0 100]);
 
@@ -101,7 +101,7 @@ plot(linspace(0, 100, length(Angulos.Muneca_L.beta)), Angulos.Muneca_L.beta, 'r'
 hold off;
 title('Muñeca - Des. Radial/Cubital', 'FontSize', 12, 'FontWeight', 'bold');
 xlabel('% Movimiento');
-ylabel('Radial(-)/Cubital(+) [°]');
+ylabel('Abd(-)/Add(+) [°]');
 grid on;
 xlim([0 100]);
 
